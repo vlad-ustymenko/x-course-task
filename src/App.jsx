@@ -18,11 +18,14 @@ function App() {
   return (
     <>
       {!login ? (
-        <BrowserRouter>
+        <BrowserRouter basename="/x-course-task">
           <div className="App">
             <Routes>
               <Route path="/" element={<MainLayout />}>
-                <Route index element={<Navigate to="/signin" />} />
+                <Route
+                  index
+                  element={<Navigate to="/x-course-task/signin" />}
+                />
                 <Route path="signin" element={<SignIn />} />
                 <Route path="*" element={<Navigate to="/signin" />} />
               </Route>
@@ -30,7 +33,7 @@ function App() {
           </div>
         </BrowserRouter>
       ) : (
-        <BrowserRouter>
+        <BrowserRouter basename="/x-course-task">
           <div className="App">
             <Routes>
               <Route path="/" element={<MainLayout />}>

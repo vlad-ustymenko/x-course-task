@@ -25,7 +25,7 @@ const SignIn = () => {
         <img
           src="https://prometheus-platform.github.io/Example_of_course_project_2/static/media/avatar.0d14c6999b4a5c8e86a7.png"
           className={styles.image}
-          alt="aqwd"
+          alt="Avatar"
         />
         <form>
           <label className={styles.lable} htmlFor="userName">

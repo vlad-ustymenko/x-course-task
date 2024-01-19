@@ -5,6 +5,7 @@ import { selectBooksList } from '../redux/slices/booksSlice'
 import { setAddToCart } from '../redux/slices/cartSlice'
 import styles from './SingleBook.module.css'
 import CountBooks from './CountBooks'
+import NotFound from './NotFound'
 
 const SingleBook = () => {
   //Getting URL string parameters
@@ -14,13 +15,14 @@ const SingleBook = () => {
   //Selecting a specific book by ID
   const book = books.find((book) => book.id.toString() === params.bookID)
 
-  //Redirect to books page if page not found
+  /* //Redirect to books page if page not found
   const navigate = useNavigate()
   useEffect(() => {
     if (!book) {
-      navigate('..', { relative: 'path' })
+      navigate('..', { reletive: 'route' })
     }
   }, [book, navigate])
+  */
 
   const dispatch = useDispatch()
 
@@ -28,12 +30,16 @@ const SingleBook = () => {
     dispatch(setAddToCart({ ...book, inCart: true, count: book.count }))
   }
 
+  if (!book) {
+    return <NotFound />
+  }
+
   return (
     <div className={styles.book}>
       <div className={styles.bookWrapper}>
         <div className={styles.imageWrapper}>
           {book?.image ? (
-            <img src={book.image} alt="123" className={styles.image}></img>
+            <img src={book?.image} alt="123" className={styles.image}></img>
           ) : (
             <img
               src={
