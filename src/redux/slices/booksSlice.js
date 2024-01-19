@@ -1,11 +1,11 @@
-import { createSlice, original } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import books from '../../data/books'
 
-const state = books.map((book) => {
+const originalState = books.map((book) => {
   return { ...book, inCart: false, count: 1, initCount: 1 }
 })
 
-const initialState = state
+const initialState = originalState
 
 const booksSlice = createSlice({
   name: 'books',
@@ -13,9 +13,8 @@ const booksSlice = createSlice({
   reducers: {
     setCountUpdate: (state, action) => {
       const book = action.payload
-      const stateArr = original(state)
       const newState = []
-      stateArr.forEach((item) => {
+      state.forEach((item) => {
         if (item.title === book.title) {
           newState.push(book)
         } else {

@@ -33,10 +33,24 @@
 }
 @media (max-width: 586px) {
   .resetTitileBtn {
-    top: 12px;
+    top: 13px;
   }
   .resetTitileBtn:hover {
     color: #d1d1d1;
+  }
+}
+
+.searchBtn {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  right: 10px;
+  color: #d1d1d1;
+}
+@media (max-width: 586px) {
+  .searchBtn {
+    top: 13px;
   }
 }
 
@@ -79,4 +93,8 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
+}
+
+.notFound {
+  font-weight: 600;
 }

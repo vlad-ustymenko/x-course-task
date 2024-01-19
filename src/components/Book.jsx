@@ -5,6 +5,7 @@ import styles from './Book.module.css'
 
 const Book = ({ book, highlightMatch, filterTitle }) => {
   const dispatch = useDispatch()
+
   return (
     <article key={book.id} className={styles.book}>
       <Link to={`./${book.id}`} className={styles.link}>

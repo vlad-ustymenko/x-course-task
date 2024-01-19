@@ -10,10 +10,18 @@ import { resetFilters } from '../redux/slices/filterSlice'
 import styles from './Header.module.css'
 
 const Header = () => {
+  //Subscribe to Cart and User state
   const userName = useSelector(selectUserName)
   const countCart = useSelector(selectCart)
+
+  //Tear down the header on the Signin page
   const [open, setOpen] = useState(true)
 
+  const hendleOpen = () => {
+    setOpen(!open)
+  }
+
+  //Menu Button Control
   const menuRef = useRef(null)
   useClickOutside(menuRef, () => {
     if (!open) setTimeout(() => setOpen(true), 50)
@@ -32,9 +40,7 @@ const Header = () => {
     })
   })
 
-  const hendleOpen = () => {
-    setOpen(!open)
-  }
+  //Resetting the Store at Logout
   const dispatch = useDispatch()
   const logout = () => {
     dispatch(setUserName(''))

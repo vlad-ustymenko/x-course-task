@@ -29,10 +29,22 @@
     color: #858585;
   }
   @media (max-width: 586px) {
-    top: 12px;
+    top: 13px;
     &:hover {
       color: #d1d1d1;
     }
+  }
+}
+
+.searchBtn {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  right: 10px;
+  color: #d1d1d1;
+  @media (max-width: 586px) {
+    top: 13px;
   }
 }
 
@@ -67,4 +79,8 @@
     gap: 20px;
     justify-content: space-between;
   }
+}
+
+.notFound {
+  font-weight: 600;
 }

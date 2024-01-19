@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { original } from '@reduxjs/toolkit'
 
 const cartJson = localStorage.getItem('cart')
 
@@ -11,14 +10,13 @@ const cartSlice = createSlice({
   reducers: {
     setAddToCart: (state, action) => {
       const book = action.payload
-      const stateArr = original(state)
       const newState = []
       let coincidence = false
-      if (stateArr.length === 0) {
+      if (state.length === 0) {
         localStorage.setItem('cart', JSON.stringify([...state, book]))
         return [...state, book]
       }
-      stateArr.forEach((item) => {
+      state.forEach((item) => {
         if (item.title === book.title) {
           newState.push(book)
           coincidence = true
@@ -34,18 +32,17 @@ const cartSlice = createSlice({
       localStorage.setItem('cart', JSON.stringify(newState))
       return newState
     },
-    setClearCart: (state, action) => {
+    setClearCart: (action) => {
       return action.payload
     },
     setRemoveFromCart: (state, action) => {
-      const stateArr = original(state)
       localStorage.setItem(
         'cart',
         JSON.stringify(
-          stateArr.filter((item) => item.title !== action.payload.title)
+          state.filter((item) => item.title !== action.payload.title)
         )
       )
-      return stateArr.filter((item) => item.title !== action.payload.title)
+      return state.filter((item) => item.title !== action.payload.title)
     },
   },
 })

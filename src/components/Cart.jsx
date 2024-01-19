@@ -8,15 +8,20 @@ import CountBooks from './CountBooks'
 import styles from '../components/Cart.module.css'
 
 export const Cart = () => {
+  //Subscribe to Cart state
   const dispatch = useDispatch()
   const books = useSelector(selectCart)
+
+  //Filter cart books
   const cartList = books.filter((book) => book.inCart === true)
 
+  //Total Price count
   let totalPrice = 0
 
   cartList.forEach((e) => {
     totalPrice += e.price * e.count
   })
+  //
 
   return (
     <div className={styles.mainWrapper}>

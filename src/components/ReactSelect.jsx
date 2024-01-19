@@ -9,8 +9,8 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const ReactSelect = ({ price }) => {
+  //Price select options
   const [priceValue, setPriceValue] = useState(useSelector(selectPriceFilter))
-  const [levelValue, setLevelValue] = useState(useSelector(selectLevelFilter))
 
   const dispatch = useDispatch()
 
@@ -24,6 +24,18 @@ const ReactSelect = ({ price }) => {
     { value: '$30+', label: '$30+' },
   ]
 
+  const getPriceValue = () => {
+    return priceValue ? priceOptions.find((i) => i.value === priceValue) : ''
+  }
+
+  const changePriceValue = (newValue) => {
+    dispatch(setPriceFilter(newValue.value))
+    setPriceValue(newValue.value)
+  }
+
+  //Level select options
+  const [levelValue, setLevelValue] = useState(useSelector(selectLevelFilter))
+
   const levelOptions = [
     { value: 'Any Level', label: 'Any Level' },
     {
@@ -34,17 +46,8 @@ const ReactSelect = ({ price }) => {
     { value: 'Pro', label: 'Pro' },
   ]
 
-  const getPriceValue = () => {
-    return priceValue ? priceOptions.find((i) => i.value === priceValue) : ''
-  }
-
   const getLevelValue = () => {
     return levelValue ? levelOptions.find((i) => i.value === levelValue) : ''
-  }
-
-  const changePriceValue = (newValue) => {
-    dispatch(setPriceFilter(newValue.value))
-    setPriceValue(newValue.value)
   }
 
   const changeLevelValue = (newValue) => {
