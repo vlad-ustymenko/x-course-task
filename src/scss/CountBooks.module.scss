@@ -1,0 +1,46 @@
+.countWrapper {
+  display: flex;
+}
+.minusCount,
+.plusCount {
+  width: 29px;
+  height: 29px;
+  background-color: #767676;
+  &:hover {
+    background-color: #919191;
+  }
+  &:disabled {
+    background-color: #bebebe;
+  }
+  @media (max-width: 586px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+.count {
+  text-align: center;
+  justify-content: center;
+  width: 40px;
+  padding: 5px 10px;
+  border: 1px #bebebe solid;
+  @media (max-width: 586px) {
+    font-size: 1.4em;
+    width: 50px;
+  }
+}
+
+.minusCount {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.plusCount {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.Arrow {
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  color: white;
+}

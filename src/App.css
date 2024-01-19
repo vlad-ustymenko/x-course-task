@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100dvh;
+  /*
+  background: linear-gradient(
+    180deg,
+    rgba(214, 144, 255, 0.40397408963585435) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(214, 144, 255, 0.4459908963585434) 100%
+  );
+  */
+}

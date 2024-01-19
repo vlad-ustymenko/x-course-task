@@ -1,0 +1,27 @@
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px -1px 8px -2px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 1px 0 8px -2px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 1px 0 8px -2px rgba(0, 0, 0, 0.64);
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-weight: 500;
+  color: #ff6d49;
+}
