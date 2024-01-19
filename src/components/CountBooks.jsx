@@ -70,10 +70,10 @@ const CountBooks = ({ book }) => {
         onClick={handleMinusCount}
         disabled={newCount === 1}
       >
-        <RiArrowDownSLine className={styles.Arrow} id="decrease" />
+        <RiArrowDownSLine className={styles.Arrow} />
       </button>
       <input
-        id="inputCount"
+        name="count book"
         type="text"
         className={styles.count}
         value={newCount}
@@ -84,7 +84,7 @@ const CountBooks = ({ book }) => {
         onClick={handlePlusCount}
         disabled={newCount === '42' || newCount === 42}
       >
-        <RiArrowUpSLine className={styles.Arrow} id="increase" />
+        <RiArrowUpSLine className={styles.Arrow} />
       </button>
     </div>
   )

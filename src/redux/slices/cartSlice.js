@@ -28,6 +28,7 @@ const cartSlice = createSlice({
       })
       if (coincidence !== true) {
         localStorage.setItem('cart', JSON.stringify([...newState, book]))
+
         return [...newState, book]
       }
       localStorage.setItem('cart', JSON.stringify(newState))

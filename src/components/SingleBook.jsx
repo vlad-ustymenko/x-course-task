@@ -1,5 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBooksList } from '../redux/slices/booksSlice'
 import { setAddToCart } from '../redux/slices/cartSlice'

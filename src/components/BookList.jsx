@@ -67,6 +67,7 @@ const BookList = () => {
       <div className={styles.filter__wrapper}>
         <div className={styles.input__wrapper}>
           <input
+            name="title book"
             className={styles.input}
             placeholder="Enter the title of the book"
             onChange={handleTitleFilterChange}
