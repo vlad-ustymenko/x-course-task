@@ -70,9 +70,9 @@
 .filter__wrapper {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
   @media (max-width: 586px) {
     display: block;
+    margin-bottom: 20px;
   }
   .select__wrapper {
     display: flex;
