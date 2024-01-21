@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setClearCart } from '../redux/slices/cartSlice'
 import { resetFilters } from '../redux/slices/filterSlice'
@@ -8,6 +9,10 @@ import CountBooks from './CountBooks'
 import styles from '../components/Cart.module.css'
 
 export const Cart = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
+
   //Subscribe to Cart state
   const dispatch = useDispatch()
   const books = useSelector(selectCart)
@@ -31,7 +36,12 @@ export const Cart = () => {
           <>
             {cartList.map((book) => (
               <div className={styles.cartItemFlex} key={book.id}>
-                <div className={styles.cartItemTitle}>{book.title}</div>
+                <Link
+                  to={`../books/${book.id}`}
+                  className={styles.cartItemTitle}
+                >
+                  {book.title}
+                </Link>
                 <div className={styles.cartItemWrapper}>
                   <CountBooks book={book} />
                   <div className={styles.cartItemPrice}>

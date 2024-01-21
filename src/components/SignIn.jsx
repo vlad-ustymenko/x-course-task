@@ -15,7 +15,9 @@ const SignIn = () => {
   const [userName, setUsername] = useState('')
 
   const handleUserName = (e) => {
-    if (e.target.value.length < 16) return setUsername(e.target.value)
+    const inputValue = e.target.value.replace(/[^а-яА-ЯёЁa-zA-Z0-9]+$/g, '')
+    if (inputValue.length < 16) return setUsername(inputValue)
+    return inputValue
   }
 
   return (

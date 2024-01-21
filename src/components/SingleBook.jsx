@@ -5,8 +5,13 @@ import { setAddToCart } from '../redux/slices/cartSlice'
 import styles from './SingleBook.module.css'
 import CountBooks from './CountBooks'
 import NotFound from './NotFound'
+import { useEffect } from 'react'
 
 const SingleBook = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
+
   //Getting URL string parameters
   const params = useParams()
   //Book list subscription

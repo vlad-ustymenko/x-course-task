@@ -49,6 +49,7 @@
 }
 
 .cartItemTitle {
+  color: #374151;
   text-align: left;
   flex: 1 1 auto;
   font-weight: 600;
