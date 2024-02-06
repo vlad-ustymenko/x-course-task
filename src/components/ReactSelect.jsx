@@ -1,12 +1,14 @@
-import Select from 'react-select'
-import {
-  selectPriceFilter,
-  selectLevelFilter,
-  setPriceFilter,
-  setLevelFilter,
-} from '../redux/slices/filterSlice'
 import { useState } from 'react'
+//redux
+import {
+	selectPriceFilter,
+	selectLevelFilter,
+	setPriceFilter,
+	setLevelFilter,
+} from '../redux/slices/filterSlice'
 import { useDispatch, useSelector } from 'react-redux'
+//component
+import Select from 'react-select'
 
 const ReactSelect = ({ price }) => {
   //Price select options

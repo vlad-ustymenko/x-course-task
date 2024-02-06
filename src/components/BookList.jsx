@@ -1,3 +1,4 @@
+//redux
 import { useSelector, useDispatch } from 'react-redux'
 import {
   setTitleFilter,
@@ -7,10 +8,12 @@ import {
   resetTitleFilter,
 } from '../redux/slices/filterSlice'
 import { selectBooksList } from '../redux/slices/booksSlice'
-import { IoClose, IoSearchSharp } from 'react-icons/io5'
-import styles from './BookList.module.css'
+//Components
 import ReactSelect from './ReactSelect'
 import Book from './Book'
+//icons & styles
+import { IoClose, IoSearchSharp } from 'react-icons/io5'
+import styles from './BookList.module.css'
 
 const BookList = () => {
   //Subscriptions to redux states

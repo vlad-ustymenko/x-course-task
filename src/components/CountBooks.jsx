@@ -1,7 +1,9 @@
 import { useState } from 'react'
+//redux
 import { useDispatch } from 'react-redux'
 import { setCountUpdate } from '../redux/slices/booksSlice'
 import { setAddToCart } from '../redux/slices/cartSlice'
+//icons & styles
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri'
 import styles from './CountBooks.module.css'
 

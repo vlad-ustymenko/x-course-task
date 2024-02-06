@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+//redux
 import { resetFilters } from '../redux/slices/filterSlice'
 import { useDispatch } from 'react-redux'
-
+//styles
 import styles from './NotFound.module.css'
 
 const NotFound = () => {

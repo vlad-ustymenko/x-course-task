@@ -1,11 +1,16 @@
+//hooks
+import { useEffect } from 'react'
+//router-dom
 import { useParams } from 'react-router-dom'
+//redux
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBooksList } from '../redux/slices/booksSlice'
 import { setAddToCart } from '../redux/slices/cartSlice'
-import styles from './SingleBook.module.css'
+//components
 import CountBooks from './CountBooks'
 import NotFound from './NotFound'
-import { useEffect } from 'react'
+//styles
+import styles from './SingleBook.module.css'
 
 const SingleBook = () => {
   useEffect(() => {

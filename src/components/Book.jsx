@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+//redux
 import { useDispatch } from 'react-redux'
 import { setAddToCart } from '../redux/slices/cartSlice'
+
 import styles from './Book.module.css'
 
 const Book = ({ book, highlightMatch, filterTitle }) => {

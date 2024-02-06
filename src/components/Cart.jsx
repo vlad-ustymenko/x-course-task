@@ -1,11 +1,15 @@
 import { useEffect } from 'react'
+//redux
 import { useDispatch, useSelector } from 'react-redux'
 import { setClearCart } from '../redux/slices/cartSlice'
 import { resetFilters } from '../redux/slices/filterSlice'
-import { Link } from 'react-router-dom'
-import { MdDeleteForever } from 'react-icons/md'
 import { selectCart, setRemoveFromCart } from '../redux/slices/cartSlice'
+//router-dom
+import { Link } from 'react-router-dom'
+//components
 import CountBooks from './CountBooks'
+//icons & styles
+import { MdDeleteForever } from 'react-icons/md'
 import styles from '../components/Cart.module.css'
 
 export const Cart = () => {

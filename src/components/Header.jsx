@@ -1,17 +1,22 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
+//router-dom
 import { Link } from 'react-router-dom'
+//redux
 import { useSelector, useDispatch } from 'react-redux'
 import { selectUserName, setUserName } from '../redux/slices/sigIn'
 import { setClearCart, selectCart } from '../redux/slices/cartSlice'
+import { resetFilters } from '../redux/slices/filterSlice'
+//custom hooks
 import { useClickOutside } from '../hooks/useClickOutside'
+import { useSwipeToCloseMenu } from '../hooks/useSwipeToCloseMenu'
+//icon & styles
 import { TiShoppingCart } from 'react-icons/ti'
 import { FaUserCircle } from 'react-icons/fa'
-import { resetFilters } from '../redux/slices/filterSlice'
 import styles from './Header.module.css'
 
 const Header = () => {
   //Subscribe to Cart and User state
-  const userName = useSelector(selectUserName)
+  const user = useSelector(selectUserName)
   const countCart = useSelector(selectCart)
 
   //Tear down the header on the Signin page
@@ -26,19 +31,7 @@ const Header = () => {
   useClickOutside(menuRef, () => {
     if (!open) setTimeout(() => setOpen(true), 50)
   })
-
-  useEffect(() => {
-    let touchStart = 0
-    let touchEnd = 0
-    document.addEventListener('touchstart', (e) => {
-      touchStart = e.changedTouches[0].pageY
-    })
-
-    document.addEventListener('touchend', (e) => {
-      touchEnd = e.changedTouches[0].pageY
-      if (touchStart < touchEnd || touchStart > touchEnd) setOpen(true)
-    })
-  })
+  useSwipeToCloseMenu(() => setOpen(true))
 
   //Resetting the Store at Logout
   const dispatch = useDispatch()
@@ -50,7 +43,7 @@ const Header = () => {
 
   return (
     <>
-      {userName ? (
+      {user ? (
         <header className={styles.header}>
           <div className={styles.container}>
             <Link
@@ -116,9 +109,7 @@ const Header = () => {
                   </button>
                   <div className={styles.btnGroup__user}>
                     <FaUserCircle className={styles.btnGroup__img} />
-                    <span className={styles.btnGroup__userName}>
-                      {userName}
-                    </span>
+                    <span className={styles.btnGroup__userName}>{user}</span>
                   </div>
                 </div>
               </li>
