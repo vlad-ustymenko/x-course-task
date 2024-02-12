@@ -1,7 +1,7 @@
 {
   "name": "x-course-task",
   "version": "0.1.0",
-  "homepage": "https://vlad-ustymenko.github.io/x-course-task",
+  "homepage": "https://vlad-ustymenko.github.io/prometheus-x-course-task",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
