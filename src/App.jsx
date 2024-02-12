@@ -26,13 +26,13 @@ function App() {
   return (
     <>
       {!user ? (
-        <BrowserRouter basename="/x-course-task">
+        <BrowserRouter basename="/prometheus-x-course-task">
           <div className="App">
             <Routes>
               <Route path="/" element={<MainLayout />}>
                 <Route
                   index
-                  element={<Navigate to="/x-course-task/signin" />}
+                  element={<Navigate to="/prometheus-x-course-task/signin" />}
                 />
                 <Route path="signin" element={<SignIn />} />
                 <Route path="*" element={<Navigate to="/signin" />} />
@@ -41,7 +41,7 @@ function App() {
           </div>
         </BrowserRouter>
       ) : (
-        <BrowserRouter basename="/x-course-task">
+        <BrowserRouter basename="/prometheus-x-course-task">
           <div className="App">
             <Routes>
               <Route path="/" element={<MainLayout />}>
