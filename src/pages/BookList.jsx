@@ -1,27 +1,26 @@
 //redux
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {
-  setTitleFilter,
   selectTitleFilter,
   selectPriceFilter,
   selectLevelFilter,
-  resetTitleFilter,
 } from '../redux/slices/filterSlice'
+
 import { selectBooksList } from '../redux/slices/booksSlice'
+
 //Components
-import ReactSelect from './ReactSelect'
-import Book from './Book'
+
+import Book from '../widgets/Book'
 //icons & styles
-import { IoClose, IoSearchSharp } from 'react-icons/io5'
-import styles from './BookList.module.css'
+import styles from './BookList.module.scss'
+import FilterBlock from '../widgets/FilterBlock'
 
 const BookList = () => {
-  //Subscriptions to redux states
-  const books = useSelector(selectBooksList)
   const filterTitle = useSelector(selectTitleFilter)
   const filterPrice = useSelector(selectPriceFilter)
   const filterLevel = useSelector(selectLevelFilter)
-  const dispatch = useDispatch()
+  //Subscriptions to redux states
+  const books = useSelector(selectBooksList)
 
   //Filter books to display for conditions
   const filteredBooks = books.filter((book) => {
@@ -51,10 +50,6 @@ const BookList = () => {
     return matchesTitle && matchesPrice && matchesLevel
   })
 
-  const handleTitleFilterChange = (e) => {
-    dispatch(setTitleFilter(e.target.value))
-  }
-
   //Highlighting text by filter Title
   const highlightMatch = (text, filter) => {
     if (!filter) return text
@@ -74,31 +69,7 @@ const BookList = () => {
 
   return (
     <>
-      <div className={styles.filter__wrapper}>
-        <div className={styles.input__wrapper}>
-          <input
-            name="title book"
-            className={styles.input}
-            placeholder="Enter the title of the book"
-            onChange={handleTitleFilterChange}
-            value={filterTitle}
-            autoComplete="off"
-          />
-          {filterTitle ? (
-            <IoClose
-              className={styles.resetTitileBtn}
-              onClick={() => dispatch(resetTitleFilter())}
-            />
-          ) : (
-            <IoSearchSharp className={styles.searchBtn} />
-          )}
-        </div>
-        <div className={styles.select__wrapper}>
-          <ReactSelect price="price" />
-          <ReactSelect price="" />
-        </div>
-      </div>
-
+      <FilterBlock />
       <div className={styles.booksWrapper}>
         {filteredBooks.length === 0 ? (
           <p className={styles.notFound}>Not found... </p>

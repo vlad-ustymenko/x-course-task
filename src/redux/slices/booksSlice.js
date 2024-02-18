@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import books from '../../data/books'
-
-const originalState = books.map((book) => {
-  return { ...book, inCart: false, count: 1, initCount: 1 }
-})
-
-const initialState = originalState
+ 
+const initialState = JSON.parse(localStorage.getItem('books')).map((book) => {
+	return { ...book, inCart: false, count: 1, initCount: 1 }
+ })
 
 const booksSlice = createSlice({
   name: 'books',

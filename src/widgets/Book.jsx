@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setAddToCart } from '../redux/slices/cartSlice'
 
-import styles from './Book.module.css'
+import Image from '../../public/img/imageNotFound.png'
+
+import styles from './Book.module.scss'
 
 const Book = ({ book, highlightMatch, filterTitle }) => {
   const dispatch = useDispatch()
@@ -12,15 +14,9 @@ const Book = ({ book, highlightMatch, filterTitle }) => {
     <article key={book.id} className={styles.book}>
       <Link to={`./${book.id}`} className={styles.link}>
         {book.image ? (
-          <img src={book.image} alt="123" className={styles.image}></img>
+          <img src={book.image} alt="book image" className={styles.image}></img>
         ) : (
-          <img
-            src={
-              'https://prometheus-platform.github.io/Example_of_course_project_2/static/media/imageNotFound.298b98203c3825c61303.png'
-            }
-            alt="123"
-            className={styles.image}
-          ></img>
+          <Image className={styles.image} alt="book image"></Image>
         )}
       </Link>
       <Link to={`./${book.id}`} className={styles.title}>

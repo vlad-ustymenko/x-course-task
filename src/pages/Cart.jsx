@@ -7,10 +7,10 @@ import { selectCart, setRemoveFromCart } from '../redux/slices/cartSlice'
 //router-dom
 import { Link } from 'react-router-dom'
 //components
-import CountBooks from './CountBooks'
+import CountBooks from '../widgets/CountBooks'
 //icons & styles
 import { MdDeleteForever } from 'react-icons/md'
-import styles from '../components/Cart.module.css'
+import styles from './Cart.module.scss'
 
 export const Cart = () => {
   useEffect(() => {

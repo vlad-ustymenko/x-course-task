@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUserName } from '../redux/slices/sigIn'
 //styles
-import styles from './SignIn.module.css'
+import styles from './SignIn.module.scss'
 
 const SignIn = () => {
   const dispatch = useDispatch()

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { resetFilters } from '../redux/slices/filterSlice'
 import { useDispatch } from 'react-redux'
 //styles
-import styles from './NotFound.module.css'
+import styles from './NotFound.module.scss'
 
 const NotFound = () => {
   const dispatch = useDispatch()

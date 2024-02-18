@@ -1,10 +1,10 @@
 import { useState } from 'react'
 //redux
 import {
-	selectPriceFilter,
-	selectLevelFilter,
-	setPriceFilter,
-	setLevelFilter,
+  selectPriceFilter,
+  selectLevelFilter,
+  setPriceFilter,
+  setLevelFilter,
 } from '../redux/slices/filterSlice'
 import { useDispatch, useSelector } from 'react-redux'
 //component
@@ -27,7 +27,7 @@ const ReactSelect = ({ price }) => {
   ]
 
   const getPriceValue = () => {
-    return priceValue ? priceOptions.find((i) => i.value === priceValue) : ''
+    return priceValue && priceOptions.find((i) => i.value === priceValue)
   }
 
   const changePriceValue = (newValue) => {
@@ -49,7 +49,7 @@ const ReactSelect = ({ price }) => {
   ]
 
   const getLevelValue = () => {
-    return levelValue ? levelOptions.find((i) => i.value === levelValue) : ''
+    return levelValue && levelOptions.find((i) => i.value === levelValue)
   }
 
   const changeLevelValue = (newValue) => {

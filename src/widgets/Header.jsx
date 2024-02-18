@@ -12,7 +12,7 @@ import { useSwipeToCloseMenu } from '../hooks/useSwipeToCloseMenu'
 //icon & styles
 import { TiShoppingCart } from 'react-icons/ti'
 import { FaUserCircle } from 'react-icons/fa'
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 
 const Header = () => {
   //Subscribe to Cart and User state

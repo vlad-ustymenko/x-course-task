@@ -1,27 +1,34 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectUserName } from './redux/slices/sigIn'
-//import { lazy } from 'react'
-import BookList from './components/BookList'
-import SignIn from './components/SignIn'
-import NotFound from './components/NotFound'
-import Cart from './components/Cart'
+import BookList from './pages/BookList'
+import SignIn from './pages/SignIn'
+import NotFound from './pages/NotFound'
+import Cart from './pages/Cart'
 import MainLayout from './layouts/MainLayout'
-import SingleBook from './components/SingleBook'
+import SingleBook from './pages/SingleBook'
 
 import './App.css'
 
-/*
-const BookList = lazy(() => import('./components/BookList'))
-const SignIn = lazy(() => import('./components/SignIn'))
-const NotFound = lazy(() => import('./components/NotFound'))
-const Cart = lazy(() => import('./components/Cart'))
-const MainLayout = lazy(() => import('./layouts/MainLayout'))
-const SingleBook = lazy(() => import('./components/SingleBook'))
-*/
-
 function App() {
   const user = useSelector(selectUserName)
+
+  const [books, setBooks] = useState([])
+	
+	fetch("./books.json").then(
+		function(res){
+		return res.json()
+	 }).then(function(data){
+	 // store Data in State Data Variable
+		setBooks(data)
+	 }).catch(
+		function(err){
+		  console.log(err, ' error')
+		}
+	 )
+
+	 localStorage.setItem('books', JSON.stringify(books))
 
   return (
     <>
