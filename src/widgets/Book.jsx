@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setAddToCart } from '../redux/slices/cartSlice'
 
-import Image from '../../public/img/imageNotFound.png'
-
 import styles from './Book.module.scss'
 
 const Book = ({ book, highlightMatch, filterTitle }) => {
@@ -16,7 +14,11 @@ const Book = ({ book, highlightMatch, filterTitle }) => {
         {book.image ? (
           <img src={book.image} alt="book image" className={styles.image}></img>
         ) : (
-          <Image className={styles.image} alt="book image"></Image>
+          <img
+            src="./images/imageNotFound.png"
+            className={styles.image}
+            alt="book image"
+          ></img>
         )}
       </Link>
       <Link to={`./${book.id}`} className={styles.title}>

@@ -51,10 +51,8 @@ const SingleBook = () => {
             <img src={book?.image} alt="123" className={styles.image}></img>
           ) : (
             <img
-              src={
-                'https://prometheus-platform.github.io/Example_of_course_project_2/static/media/imageNotFound.298b98203c3825c61303.png'
-              }
-              alt="123"
+              src="./images/imageNotFound.png"
+              alt="book image"
               className={styles.image}
             ></img>
           )}
