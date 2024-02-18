@@ -12,12 +12,12 @@ const Book = ({ book, highlightMatch, filterTitle }) => {
     <article key={book.id} className={styles.book}>
       <Link to={`./${book.id}`} className={styles.link}>
         {book.image ? (
-          <img src={book.image} alt="book image" className={styles.image}></img>
+          <img src={book.image} alt="book" className={styles.image}></img>
         ) : (
           <img
             src="./images/imageNotFound.png"
             className={styles.image}
-            alt="book image"
+            alt="book"
           ></img>
         )}
       </Link>

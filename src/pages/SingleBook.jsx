@@ -52,7 +52,7 @@ const SingleBook = () => {
           ) : (
             <img
               src="./images/imageNotFound.png"
-              alt="book image"
+              alt="book"
               className={styles.image}
             ></img>
           )}
