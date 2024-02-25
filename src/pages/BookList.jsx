@@ -5,15 +5,12 @@ import {
   selectPriceFilter,
   selectLevelFilter,
 } from '../redux/slices/filterSlice'
-
 import { selectBooksList } from '../redux/slices/booksSlice'
-
 //Components
-
+import FilterBlock from '../widgets/FilterBlock'
 import Book from '../widgets/Book'
 //icons & styles
 import styles from './BookList.module.scss'
-import FilterBlock from '../widgets/FilterBlock'
 
 const BookList = () => {
   const filterTitle = useSelector(selectTitleFilter)

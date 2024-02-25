@@ -51,7 +51,7 @@ const SingleBook = () => {
             <img src={book?.image} alt="123" className={styles.image}></img>
           ) : (
             <img
-              src="./images/imageNotFound.png"
+              src="../images/imageNotFound.png"
               alt="book"
               className={styles.image}
             ></img>

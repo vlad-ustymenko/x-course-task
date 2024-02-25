@@ -33,6 +33,7 @@ const cartSlice = createSlice({
       return newState
     },
     setClearCart: (state) => {
+      localStorage.setItem('cart', '[]')
       return []
     },
     setRemoveFromCart: (state, action) => {

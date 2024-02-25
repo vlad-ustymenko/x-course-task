@@ -70,7 +70,6 @@ export const Cart = () => {
                 <button
                   className={styles.totalPriceBtn}
                   onClick={() => {
-                    localStorage.setItem('cart', '[]')
                     dispatch(setClearCart())
                   }}
                 >
