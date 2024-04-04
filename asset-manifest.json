@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/prometheus-x-course-task/static/css/main.9bb71e95.css",
-    "main.js": "/prometheus-x-course-task/static/js/main.6624efc9.js",
+    "main.js": "/prometheus-x-course-task/static/js/main.775848c0.js",
     "index.html": "/prometheus-x-course-task/index.html",
     "main.9bb71e95.css.map": "/prometheus-x-course-task/static/css/main.9bb71e95.css.map",
-    "main.6624efc9.js.map": "/prometheus-x-course-task/static/js/main.6624efc9.js.map"
+    "main.775848c0.js.map": "/prometheus-x-course-task/static/js/main.775848c0.js.map"
   },
   "entrypoints": [
     "static/css/main.9bb71e95.css",
-    "static/js/main.6624efc9.js"
+    "static/js/main.775848c0.js"
   ]
 }
