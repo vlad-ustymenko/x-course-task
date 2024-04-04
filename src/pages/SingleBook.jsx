@@ -44,7 +44,7 @@ const SingleBook = () => {
   }
 
   return (
-    <div className={styles.book}>
+    <div data-testid="Correct book" className={styles.book}>
       <div className={styles.bookWrapper}>
         <div className={styles.imageWrapper}>
           {book?.image ? (

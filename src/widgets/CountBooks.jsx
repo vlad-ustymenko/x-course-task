@@ -47,6 +47,16 @@ const CountBooks = ({ book }) => {
     return setCount(inputValue)
   }
 
+  const onBlurValidateCount = (e) => {
+    let inputValue = e.target.value
+    if (inputValue === '') {
+      book.inCart
+        ? dispatch(setAddToCart({ ...book, count: 1 }))
+        : dispatch(setCountUpdate({ ...book, count: 1 }))
+      return setCount(1)
+    }
+  }
+
   //Decrease book counter
   const handlePlusCount = () => {
     if (newCount < book.amount || newCount < book.amount) {
@@ -71,20 +81,23 @@ const CountBooks = ({ book }) => {
         className={styles.minusCount}
         onClick={handleMinusCount}
         disabled={newCount === 1}
+        data-testid="decrease"
       >
         <RiArrowDownSLine className={styles.Arrow} />
       </button>
       <input
         name="count book"
-        type="text"
         className={styles.count}
         value={newCount}
         onChange={inputCount}
+        onBlur={onBlurValidateCount}
+        data-testid="input"
       />
       <button
         className={styles.plusCount}
         onClick={handlePlusCount}
         disabled={newCount === '42' || newCount === 42}
+        data-testid="increase"
       >
         <RiArrowUpSLine className={styles.Arrow} />
       </button>
